@@ -57,9 +57,7 @@ header h1 {
     height: 160px;
     line-height: 160px;
 }
-.item.wide {
-    width: 462px;
-}
+
 .item span {
 }
 
@@ -95,5 +93,3 @@ header h1 {
 @media (min-width: 1500px) {
     #container, header h1 { width: 1432px; }
 }
-
-

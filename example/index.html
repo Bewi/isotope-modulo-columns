@@ -23,9 +23,6 @@
             var item = $('<div/>').text(items + 1);
             item.addClass('item');
             item.addClass('h' + ((items % 3) + 1));
-            if (items % 7 == 3) {
-                item.addClass('wide');
-            }
             container.prepend(item);
         }
 
@@ -35,7 +32,8 @@
             layoutMode: 'moduloColumns',
             moduloColumns: {
                 columnWidth: container.find('.item').not('.wide').get(0),
-                gutter: 20
+                gutter: 20,
+				fillGaps: true
             }
         });
 

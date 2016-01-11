@@ -47,6 +47,15 @@
                 this.currentColumn = 0;
             }
 
+            // If we have more than on column, try to fill holes with last line.
+            if(this.cols > 1 && this.options.fillGaps === true) {
+                var itemsLeft =  this.items.length - this.items.indexOf(item) - 1;
+                if (itemsLeft <= this.cols) {
+                    // Find the smallest column and select it.
+                    this.currentColumn = this.columnHeights.indexOf(Math.min.apply(null, this.columnHeights));
+                }
+            }
+
             // Find longest column as use length
             var maxHeight = 0;
             for (var offset = 0; offset < itemCols; offset++) {
@@ -103,4 +112,3 @@
     }
 
 })(window);
-
